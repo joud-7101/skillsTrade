@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>skills Trade</title>
+    <title>Skills Trade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -40,6 +41,17 @@
 
         nav a:hover {
             color: #007bff;
+        }
+
+        .login-icon {
+            font-size: 20px;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .login-icon:hover {
+            color: #0056b3;
         }
 
         .hero {
@@ -90,7 +102,7 @@
             border: 1px solid #ddd;
             border-radius: 15px;
             margin: 15px;
-            padding: 30px;
+            padding: 15px;
             width: 220px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -99,6 +111,18 @@
 
         .skill:hover {
             transform: translateY(-5px);
+        }
+
+        .skill img {
+            width: 100%;
+            /* Ensures the image takes full width */
+            height: 140px;
+            /* Sets a uniform height */
+            object-fit: cover;
+            /* Ensures the image covers the space without distortion */
+            border-radius: 10px;
+            /* Rounds the corners of the images */
+            margin-bottom: 15px;
         }
 
         footer {
@@ -134,13 +158,14 @@
 <body>
 
     <header>
-        <h1>skills Trade</h1>
+        <h1>Skills Trade</h1>
         <nav>
             <a href="#">Home</a>
             <a href="#">Features</a>
             <a href="#">Community</a>
             <a href="#">Blog</a>
             <a href="#">Pricing</a>
+            <a href="#" class="login-icon"><i class="fas fa-sign-in-alt"></i> Login</a>
         </nav>
     </header>
 
@@ -152,25 +177,24 @@
 
     <section class="skills">
         <div class="skill">
-            <h3>Skill 1</h3>
-            <p>Description of skill 1.</p>
+            <img src="webDev.jpg" alt="Web Development">
+            <h3><a href="#" style="color: #007bff;">Web Development</a></h3>
+            <p>Learn how to build websites using HTML, CSS, and JavaScript.</p>
         </div>
         <div class="skill">
-            <h3>Skill 2</h3>
-            <p>Description of skill 2.</p>
+            <img src="digitalMarketing.jpg" alt="Digital Marketing">
+            <h3><a href="#" style="color: #007bff;">Digital Marketing</a></h3>
+            <p>Understand the strategies to promote your business online.</p>
         </div>
         <div class="skill">
-            <h3>Skill 3</h3>
-            <p>Description of skill 3.</p>
-        </div>
-        <div class="skill">
-            <h3>Skill 4</h3>
-            <p>Description of skill 4.</p>
+            <img src="graphicDesign.jpg" alt="Graphic Design">
+            <h3><a href="#" style="color: #007bff;">Graphic Design</a></h3>
+            <p>Create stunning visuals and graphics using design software.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2023 Nexcient. All rights reserved.</p>
+        <p>&copy; 2023 Skills Trade. All rights reserved.</p>
         <div class="footer-links">
             <a href="#">Privacy Policy</a> |
             <a href="#">Terms of Service</a>
