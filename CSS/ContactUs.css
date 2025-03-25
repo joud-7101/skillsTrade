@@ -5,6 +5,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
+
 .contact-form {
     width: 50%;
     margin: 50px auto;
@@ -13,18 +14,22 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .contact-form h2 {
     text-align: center;
     color: #007bff;
 }
+
 .contact-form form {
     display: flex;
     flex-direction: column;
 }
+
 .contact-form label {
     margin-top: 10px;
     font-weight: bold;
 }
+
 .contact-form input, 
 .contact-form select, 
 .contact-form textarea {
@@ -34,6 +39,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+
 .contact-form button {
     margin-top: 20px;
     padding: 12px;
@@ -45,8 +51,63 @@ body {
     font-size: 16px;
     transition: background-color 0.3s;
 }
+
 .contact-form button:hover {
     background-color: #0056b3;
+}
+
+/* For 576px screen width (mobile devices) */
+@media (max-width: 576px) {
+    .contact-form {
+        width: 90%; 
+        margin: 20px auto; 
+        padding: 15px; 
+    }
+
+    .contact-form h2 {
+        font-size: 24px; 
+    }
+
+    .contact-form button {
+        padding: 10px; 
+        font-size: 14px; 
+    }
+}
+
+/* For 768px screen width (tablets) */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 70%; 
+        margin: 40px auto; 
+        padding: 20px; 
+    }
+
+    .contact-form h2 {
+        font-size: 26px; 
+    }
+
+    .contact-form button {
+        padding: 12px; 
+        font-size: 15px; 
+    }
+}
+
+/* For 992px screen width (small desktop/laptops) */
+@media (max-width: 992px) {
+    .contact-form {
+        width: 60%; 
+        margin: 40px auto; 
+        padding: 25px; 
+    }
+
+    .contact-form h2 {
+        font-size: 28px; 
+    }
+
+    .contact-form button {
+        padding: 12px; 
+        font-size: 16px; 
+    }
 }
 
 /*  Active nav link indicator  
