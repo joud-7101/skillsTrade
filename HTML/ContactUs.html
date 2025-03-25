@@ -1,0 +1,106 @@
+<!-- 
+FILE: ContactUs.html
+DESCRIPTION: This HTML file represents the "Contact Us" page for the Skills Trade website. 
+It includes a form for users to submit their contact details and preferences.
+
+STRUCTURE:
+1. DOCTYPE Declaration: Specifies the HTML5 document type.
+2. <html>: Root element with language set to English.
+3. <head>: Contains metadata and links to external CSS stylesheets.
+    - Title: "Contact Us"
+    - Stylesheets: 
+      - HomePage.css: General styles for the website.
+      - ContactUs.css: Specific styles for the Contact Us page.
+4. <body>: Main content of the page.
+    - <header>: Contains the page title and navigation menu.
+      - Navigation links to other pages (Home, Features, Community, Pricing, Contact Us, About Us, Login).
+    - <section class="contact-form">: Main section for the contact form.
+      - Form Fields:
+         - Name: Text input for first and last name.
+         - Gender: Dropdown menu with options (Male, Female, Other).
+         - Mobile: Input for phone number.
+         - Date of Birth: Date picker input.
+         - Email Address: Input for email.
+         - Preferred Language: Dropdown menu with options (English, Arabic, French).
+         - Note: Textarea for additional messages or notes.
+      - Submit Button: Sends form data to "../backend/contact.php" via POST method.
+    - <footer>: Footer section with copyright information.
+
+USAGE:
+- This page allows users to contact the Skills Trade team by filling out the form.
+- The form collects essential user information and preferences for further communication.
+
+DEPENDENCIES:
+- ../CSS/HomePage.css: General styling for the website.
+- ../CSS/ContactUs.css: Specific styling for the Contact Us page.
+- ../backend/contact.php: Backend script to handle form submissions.
+
+NOTES:
+- Ensure the linked CSS files and backend script paths are correct.
+- The form fields are marked as required to ensure all necessary information is provided.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../CSS/HomePage.css">
+    <link rel="stylesheet" href="../CSS/ContactUs.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <a href="../HTML/HomePage.html">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Community</a>
+            <a href="#">Pricing</a>
+            <a href="../HTML/ContactUs.html" >Contact Us</a>
+            <a href="../HTML/AboutUs.html">About Us</a>
+            <a href="#" class="login-icon"><i class="fas fa-sign-in-alt"></i> Login</a>
+
+        </nav>
+    </header>
+
+    <section class="contact-form">
+        <h2>Get in Touch</h2>
+        <form action="../backend/contact.php" method="POST">
+            <label for="name">First and Last Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="mobile">Mobile:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="language">Preferred Language:</label>
+            <select id="language" name="language" required>
+                <option value="english">English</option>
+                <option value="arabic">Arabic</option>
+                <option value="french">French</option>
+            </select>
+
+            <label for="message">Note?:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Skills Trade. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,3 +1,42 @@
+<!-- 
+
+This HTML file represents the homepage of the "Skills Trade" website. It includes the following sections:
+
+1. **Head Section**:
+    - Sets the character encoding to UTF-8.
+    - Ensures responsive design with the viewport meta tag.
+    - Includes the page title "Skills Trade".
+    - Links to external stylesheets for Font Awesome icons and custom CSS.
+
+2. **Header Section**:
+    - Displays the website title "Skills Trade".
+    - Contains a navigation bar with links to various pages:
+      - Home
+      - Features
+      - Community
+      - Pricing
+      - Contact Us
+      - About Us
+      - Login (with an icon).
+
+3. **Hero Section**:
+    - A prominent section with a headline encouraging users to learn and share skills.
+    - Includes a call-to-action button for registration.
+
+4. **Skills Section**:
+    - Highlights three skill categories:
+      - Web Development
+      - Digital Marketing
+      - Graphic Design
+    - Each skill includes an image, a title with a link, and a brief description.
+
+5. **Footer Section**:
+    - Displays copyright information for the year 2025.
+    - Provides links to the Privacy Policy and Terms of Service.
+
+Purpose:
+This file serves as the main landing page for the "Skills Trade" platform, designed to attract users and provide navigation to other sections of the website.
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +45,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills Trade</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/HomePage.css">
 </head>
 
 <body>
@@ -13,11 +53,12 @@
     <header>
         <h1>Skills Trade</h1>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Features</a>
-            <a href="#">Community</a>
-            <a href="#">Blog</a>
-            <a href="#">Pricing</a>
+                <a href="../HTML/HomePage.html">Home</a>
+                <a href="#">Features</a>
+                <a href="#">Community</a>
+                <a href="#">Pricing</a>
+                <a href="../HTML/ContactUs.html">Contact Us</a>
+                <a href="../HTML/AboutUs.html">About Us</a>
             <a href="#" class="login-icon"><i class="fas fa-sign-in-alt"></i> Login</a>
         </nav>
     </header>
@@ -30,24 +71,24 @@
 
     <section class="skills">
         <div class="skill">
-            <img src="webDev.jpg" alt="Web Development">
-            <h3><a href="#" style="color: #007bff;">Web Development</a></h3>
+            <img src="../MEDIA/webDev.jpg" alt="Web Development">
+            <h3><a href="#" class="skill-link">Web Development</a></h3>
             <p>Learn how to build websites using HTML, CSS, and JavaScript.</p>
         </div>
         <div class="skill">
-            <img src="digitalMarketing.jpg" alt="Digital Marketing">
-            <h3><a href="#" style="color: #007bff;">Digital Marketing</a></h3>
+            <img src="../MEDIA/digitalMarketing.jpg" alt="Digital Marketing">
+            <h3><a href="#" class="skill-link">Digital Marketing</a></h3>
             <p>Understand the strategies to promote your business online.</p>
         </div>
         <div class="skill">
-            <img src="graphicDesign.jpg" alt="Graphic Design">
-            <h3><a href="#" style="color: #007bff;">Graphic Design</a></h3>
+            <img src="../MEDIA/graphicDesign.jpg" alt="Graphic Design">
+            <h3><a href="#" class="skill-link">Graphic Design</a></h3>
             <p>Create stunning visuals and graphics using design software.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2023 Skills Trade. All rights reserved.</p>
+        <p>&copy; 2025 Skills Trade. All rights reserved.</p>
         <div class="footer-links">
             <a href="#">Privacy Policy</a> |
             <a href="#">Terms of Service</a>

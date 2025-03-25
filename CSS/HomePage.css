@@ -142,4 +142,15 @@ footer p {
 
 .footer-links a:hover {
     color: #0056b3;
-}
+} 
+
+/*  Active nav link indicator  
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+} */

@@ -1,0 +1,145 @@
+<!-- 
+FILE: AboutUs.html
+DESCRIPTION: This HTML file represents the "About Us" page for the Skills Trade platform. 
+             It provides information about the platform's mission, development team, and story.
+
+STRUCTURE:
+1. Head Section:
+   - Sets the character encoding and viewport for responsive design.
+   - Includes the page title and links to external stylesheets (Font Awesome for icons and custom CSS files).
+
+2. Header:
+   - Displays the platform's name and a navigation bar with links to other pages (Home, Features, Community, Pricing, Contact Us, About Us, and Login).
+
+3. Hero Section:
+   - Introduces the "Meet Our Team" section with a heading and a brief description.
+
+4. About Content:
+   - Mission Statement Section: Describes the platform's mission to connect learners with experts for knowledge sharing.
+   - Team Section: Displays a table with details about the development team, including names, student IDs, roles, and social media links.
+   - Story Section: Shares the origin story of Skills Trade, highlighting its growth from a university project to a regional platform.
+
+5. Footer:
+   - Contains copyright information and links to the Privacy Policy, Terms of Service, and About Us page.
+
+USAGE:
+- This file is part of the Skills Trade platform and is linked to other pages via the navigation bar.
+- It uses external CSS files for styling and Font Awesome for social media icons.
+
+NOTES:
+- Ensure that the linked CSS files and social media links are correctly configured.
+- Update the team table and story section as the platform evolves.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Skills Trade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/HomePage.css">
+    <link rel="stylesheet" href="../CSS/AboutUs.css">
+</head>
+
+<body>
+
+   
+    <header>
+        <h1>Skills Trade</h1>
+        <nav>
+            <a href="../HTML/HomePage.html">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Community</a>
+            <a href="#">Pricing</a>
+            <a href="../HTML/ContactUs.html">Contact Us</a>
+            <a href="../HTML/AboutUs.html" >About Us</a>
+            <a href="#" class="login-icon"><i class="fas fa-sign-in-alt"></i> Login</a>
+
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Meet Our Team</h2>
+        <p>The passionate people behind Skills Trade</p>
+    </section>
+
+    <div class="about-content">
+        <section class="mission-statement">
+            <h2>Our Mission</h2>
+            <p>At Skills Trade, we believe in the power of knowledge sharing. Our platform connects learners with experts, creating a community where skills are exchanged, not just taught. We're committed to making education accessible to everyone, everywhere.</p>
+        </section>
+
+        <section class="team-section">
+            <h2>Development Team</h2>
+            <div class="team-table-container">
+                <table class="team-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Student ID</th>
+                            <th>Role</th>
+                            <th>Social Media</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Majd Khalid Alsahafi</td>
+                            <td>2210137</td>
+                            <td>Frontend Developer</td>
+                            <td class="social-links">
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Joud Samel Albeladi</td>
+                            <td>2211497</td>
+                            <td>Backend Developer</td>
+                            <td class="social-links">
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Leen</td>
+                            <td>66666</td>
+                            <td>Developer</td>
+                            <td class="social-links">
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Shahad</td>
+                            <td>6666</td>
+                            <td>Developer</td>
+                            <td class="social-links">
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <h2>Our Story</h2>
+            <p>Skills Trade was founded in 2025 by a group of university students who recognized the need for a more interactive and community-driven approach to learning. What started as a class project has grown into a platform with thousands of users across the region.</p>
+            <p>We're proud to be part of the University of Jeddah's College of Computer Science and Engineering, where innovation meets education.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Skills Trade. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="../HTML/about-us.html">About Us</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
