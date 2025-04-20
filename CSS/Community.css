@@ -1,53 +1,537 @@
-.community-header {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f2f6ff;
-    border-bottom: 1px solid #ddd;
+/* Community Page Styles*/
+body {
+  background: linear-gradient(
+    to bottom,
+    #b9e6ff,
+    #bbdefb
+  ); /* Soft blue background gradient */
+}
+.community-hero {
+  background: linear-gradient(45deg, #8ac4ff, #a7c0cd, #64b5f6, #b0e0e6);
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  margin-top: 60px;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.community-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.community-hero .hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.community-hero h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.community-hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.community-hero .hero-image {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .community-hero {
+    padding: 70px 15px;
   }
-  
-  .community-header h2 {
-    font-size: 28px;
-    color: #007bff;
-    margin-bottom: 10px;
+  .community-hero h2 {
+    font-size: 2.5rem;
   }
-  
-  .community-header p {
-    font-size: 16px;
-    color: #555;
+  .community-hero p {
+    font-size: 1.1rem;
   }
-  
-  .community-list {
-    max-width: 1000px;
-    margin: 40px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .community-hero {
+    padding: 60px 15px;
+  }
+  .community-hero h2 {
+    font-size: 2.2rem;
+  }
+  .community-hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .community-hero {
+    padding: 50px 15px;
+  }
+  .community-hero h2 {
+    font-size: 1.8rem;
+  }
+  .community-hero p {
+    font-size: 0.9rem;
+  }
+}
+.community-hero .hero-image {
+  display: none;
+}
+
+/* Keyframes for multi-color sliding animation (all blue) */
+@keyframes blueColorSlide {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .community-hero {
+    padding: 70px 15px;
+  }
+  .community-hero h2 {
+    font-size: 2.5rem;
+  }
+  .community-hero p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .community-hero {
+    padding: 60px 15px;
+  }
+  .community-hero h2 {
+    font-size: 2.2rem;
+  }
+  .community-hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .community-hero {
+    padding: 50px 15px;
+  }
+  .community-hero h2 {
+    font-size: 1.8rem;
+  }
+  .community-hero p {
+    font-size: 0.9rem;
+  }
+}
+
+.community-hero .hero-image {
+  display: none; /* Hide illustration on larger screens */
+}
+
+/* Optional: More sophisticated animated gradient */
+.community-hero {
+  background: linear-gradient(45deg, #8ac4ff, #a7c0cd, #64b5f6, #b0e0e6);
+  background-size: 400% 400%;
+  animation: beautifulGradient 15s ease infinite;
+}
+
+@keyframes beautifulGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .community-hero {
+    padding: 70px 15px;
+  }
+  .community-hero h2 {
+    font-size: 2.5rem;
+  }
+  .community-hero p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .community-hero {
+    padding: 60px 15px;
+  }
+  .community-hero h2 {
+    font-size: 2.2rem;
+  }
+  .community-hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .community-hero {
+    padding: 50px 15px;
+  }
+  .community-hero h2 {
+    font-size: 1.8rem;
+  }
+  .community-hero p {
+    font-size: 0.9rem;
+  }
+}
+
+.community-hero .hero-image {
+  display: none; /* Hide illustration on larger screens for background focus */
+}
+
+/* Subtle Animated Background (Hero) - Keeping this */
+.community-hero {
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive Design - Adjusting for smaller height */
+@media (max-width: 992px) {
+  .community-hero {
+    padding: 80px 15px; /* Already at 80px */
+  }
+
+  .community-hero h2 {
+    font-size: 3rem;
+    margin-bottom: 10px; /* Slightly reduced bottom margin */
+  }
+}
+
+@media (max-width: 768px) {
+  .community-hero {
+    padding: 60px 15px; /* Further reduced padding */
+  }
+
+  .community-hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .community-hero p {
+    font-size: 1.2rem;
+    line-height: 1.5; /* Slightly reduced line height */
+  }
+}
+
+@media (max-width: 576px) {
+  .community-hero {
+    padding: 50px 15px; /* Even further reduced padding */
+  }
+
+  .community-hero h2 {
+    font-size: 2rem;
+  }
+
+  .community-hero p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .community-hero {
+    padding: 50px 15px; /* Even further reduced padding */
+  }
+
+  .community-hero h2 {
+    font-size: 2rem;
+  }
+
+  .community-hero p {
+    font-size: 1.1rem;
+  }
+}
+
+.community-hero .hero-image {
+  display: none; /* Hide illustration on larger screens for background focus */
+}
+
+/* Subtle Animated Background (Hero) - Keeping this */
+.community-hero {
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive Design - Adjusting for smaller height */
+@media (max-width: 992px) {
+  .community-hero {
+    padding: 80px 15px; /* Already at 80px */
+  }
+
+  .community-hero h2 {
+    font-size: 3rem;
+    margin-bottom: 10px; /* Slightly reduced bottom margin */
+  }
+}
+
+@media (max-width: 768px) {
+  .community-hero {
+    padding: 60px 15px; /* Further reduced padding */
+  }
+
+  .community-hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .community-hero p {
+    font-size: 1.2rem;
+    line-height: 1.5; /* Slightly reduced line height */
+  }
+}
+
+@media (max-width: 576px) {
+  .community-hero {
+    padding: 50px 15px; /* Even further reduced padding */
+  }
+
+  .community-hero h2 {
+    font-size: 2rem;
+  }
+
+  .community-hero p {
+    font-size: 1.1rem;
+  }
+}
+
+.community-hero .hero-image {
+  display: none; /* Hide illustration on larger screens for background focus */
+}
+
+.community-grid {
+  max-width: 1100px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 30px;
+}
+
+.trade-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e0f7fa;
+}
+
+.trade-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.user-info img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-info h3 {
+  color: #1e88e5; /* Professional blue */
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.badge {
+  background-color: #4caf50; /* Green for 'Offering' */
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-left: 10px;
+}
+
+.skill {
+  color: #007bff;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.skill i,
+.wants i {
+  margin-right: 8px;
+}
+
+.wants {
+  color: #ff9800; /* Orange for 'Wants' */
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.connect-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.connect-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.connect-btn i {
+  margin-right: 8px;
+}
+
+/* Subtle Animated Background (Hero) */
+.community-hero {
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .community-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    padding: 0 20px;
-  }
-  
-  .trade-card {
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 15px;
     padding: 20px;
-    width: 260px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    text-align: center;
   }
-  
-  .trade-card:hover {
-    transform: translateY(-5px);
+
+  .community-hero {
+    padding: 100px 15px;
   }
-  
-  .trade-card h3 {
-    color: #007bff;
+
+  .community-hero h2 {
+    font-size: 3rem;
+  }
+
+  .trade-card {
+    padding: 25px;
+  }
+
+  .user-info img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  .user-info h3 {
+    font-size: 1.6rem;
+  }
+
+  .skill,
+  .wants,
+  .connect-btn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .community-grid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  }
+
+  .community-hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .trade-card {
+    text-align: left; /* Align text left when stacked */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user-info {
+    justify-content: flex-start;
+    margin-bottom: 15px;
+  }
+
+  .skill,
+  .wants {
     margin-bottom: 10px;
   }
-  
-  .trade-card p {
-    font-size: 14px;
-    margin: 6px 0;
+
+  .connect-btn {
+    align-self: flex-start; /* Align button to the left when stacked */
   }
-  
+}
+
+@media (max-width: 576px) {
+  .community-hero h2 {
+    font-size: 2rem;
+  }
+
+  .user-info h3 {
+    font-size: 1.4rem;
+  }
+}
