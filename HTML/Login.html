@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login - Skills Trade</title>
-  <link rel="stylesheet" href="../CSS/HomePage.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../CSS/HomePage.css" />
     <link rel="stylesheet" href="../CSS/Login.css" />
-</head>
-<body>
-  <header>
-    <h1>Skills Trade</h1>
-    <nav>
+  </head>
+  <body>
+    <header>
+      <h1>Skills Trade</h1>
+      <nav>
         <a href="../HTML/HomePage.html" class="active">Home</a>
         <a href="../HTML/Skills.html">Explore Skills</a>
         <a href="../HTML/ShareSkill.html">Share Your Skill</a>
@@ -18,18 +18,52 @@
         <a href="../HTML/AboutUs.html">About Us</a>
         <a href="../HTML/ContactUs.html">Contact</a>
         <a href="../HTML/Register.html">Register</a>
-        <a href="../HTML/Login.html" class="login-icon"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="../HTML/Login.html" class="login-icon">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </a>
       </nav>
-      
-  </header>
+    </header>
 
-  <div class="form-container">
-    <h2>Login</h2>
-    <form action="../backend/login.php" method="POST">
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Login</button>
-    </form>
-  </div>
-</body>
+    <div class="container">
+      <div class="login-section">
+        <h2 class="welcome-back">Welcome Back</h2>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+            />
+          </div>
+          <div class="form-actions">
+            <div class="remember-me">
+              <input type="checkbox" id="remember" name="remember" />
+              <label for="remember">Keep me logged in</label>
+            </div>
+            <div class="forgot-password">
+              <a href="#">Forgot password?</a>
+            </div>
+          </div>
+          <button type="submit" class="login-button">Log in</button>
+        </form>
+        <div class="signup-link">
+          Don't have an account? <a href="#">Sign up</a>
+        </div>
+      </div>
+      <div class="illustration-section">
+        <img src="../MEDIA/laptop.gif" alt="Refer a Friend Concept" />
+      </div>
+    </div>
+  </body>
 </html>
