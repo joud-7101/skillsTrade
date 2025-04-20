@@ -1,45 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Share Your Skill - Skills Trade</title>
-  <link rel="stylesheet" href="../CSS/HomePage.css" />
-  <link rel="stylesheet" href="../CSS/ShareSkills.css" />
-</head>
-<body>
-  <header>
-    <h1>Skills Trade</h1>
-    <nav>
-      <a href="../HTML/HomePage.html" class="active">Home</a>
-      <a href="../HTML/Skills.html">Explore Skills</a>
-      <a href="../HTML/ShareSkill.html">Share Your Skill</a>
-      <a href="../HTML/Community.html">Community</a>
-      <a href="../HTML/AboutUs.html">About Us</a>
-      <a href="../HTML/ContactUs.html">Contact</a>
-      <a href="../HTML/Register.html">Register</a>
-      <a href="../HTML/Login.html" class="login-icon"><i class="fas fa-sign-in-alt"></i> Login</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Share Your Skill - Skills Trade</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../CSS/HomePage.css" />
+    <link rel="stylesheet" href="../CSS/ShareSkills.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Skills Trade</h1>
+      <nav>
+        <a href="../HTML/HomePage.html">Home</a>
+        <a href="../HTML/Skills.html">Explore Skills</a>
+        <a href="../HTML/ShareSkill.html" class="active">Share Your Skill</a>
+        <a href="../HTML/Community.html">Community</a>
+        <a href="../HTML/AboutUs.html">About Us</a>
+        <a href="../HTML/ContactUs.html">Contact</a>
+        <a href="../HTML/Register.html">Register</a>
+        <a href="../HTML/Login.html" class="login-icon"
+          ><i class="fas fa-sign-in-alt"></i> Login</a
+        >
+      </nav>
+    </header>
 
-  <div class="upload-section">
-    <h2>Share Your Skill</h2>
-    <form action="../backend/upload.php" method="POST" enctype="multipart/form-data">
-      <input type="text" name="skillTitle" placeholder="Skill Name You Offer (e.g. Mobile Design)" required />
-      
-      <textarea name="description" rows="5" placeholder="Describe the skill you're offering..." required></textarea>
-      
-      <input type="text" name="wantSkill" placeholder="What skill would you like to receive in return?" required />
+    <section class="share-skill-hero">
+      <div class="hero-content">
+        <h2>Unleash Your Expertise</h2>
+        <p>
+          Share your unique skills with our community and find exciting
+          opportunities to learn in return.
+        </p>
+      </div>
+    </section>
 
-      <label for="videoFile">Upload an Intro or Demo (Optional):</label>
-      <input type="file" id="videoFile" name="videoFile" accept="video/*" />
+    <div class="share-skill-container">
+      <div class="share-form-wrapper">
+        <h2>Tell Us About Your Skill</h2>
+        <form
+          action="../backend/upload.php"
+          method="POST"
+          enctype="multipart/form-data"
+          class="share-skill-form"
+        >
+          <div class="form-group">
+            <label for="skillTitle"
+              ><i class="fas fa-lightbulb"></i> Skill You Offer:</label
+            >
+            <input
+              type="text"
+              id="skillTitle"
+              name="skillTitle"
+              placeholder="e.g., Mobile Design, Cooking, Piano Lessons"
+              required
+            />
+          </div>
 
-      <button type="submit">Submit Your Skill</button>
-    </form>
-  </div>
+          <div class="form-group">
+            <label for="description"
+              ><i class="fas fa-file-alt"></i> Description:</label
+            >
+            <textarea
+              id="description"
+              name="description"
+              rows="5"
+              placeholder="Describe what you can teach or offer..."
+              required
+            ></textarea>
+          </div>
 
-  <footer>
-    <p>&copy; 2025 Skills Trade. All rights reserved.</p>
-  </footer>
-</body>
+          <div class="form-group">
+            <label for="wantSkill"
+              ><i class="fas fa-exchange-alt"></i> Skill You Want:</label
+            >
+            <input
+              type="text"
+              id="wantSkill"
+              name="wantSkill"
+              placeholder="What skill are you hoping to learn in return?"
+              required
+            />
+          </div>
+
+          <div class="form-group upload-group">
+            <label for="videoFile"
+              ><i class="fas fa-upload"></i> Intro/Demo (Optional):</label
+            >
+            <div class="file-upload-wrapper">
+              <input
+                type="file"
+                id="videoFile"
+                name="videoFile"
+                accept="video/*"
+                class="file-upload-input"
+              />
+              <span class="file-upload-text"
+                >Upload a video to showcase your skill (optional)</span
+              >
+            </div>
+          </div>
+
+          <button type="submit" class="submit-skill-btn">
+            <i class="fas fa-check-circle"></i> Share Your Expertise
+          </button>
+        </form>
+      </div>
+
+      <div class="share-info-section">
+        <h3>Why Share Your Skill?</h3>
+        <ul>
+          <li>
+            <i class="fas fa-users"></i> Connect with a diverse community of
+            learners.
+          </li>
+          <li>
+            <i class="fas fa-handshake"></i> Find opportunities for mutual skill
+            exchange.
+          </li>
+          <li>
+            <i class="fas fa-graduation-cap"></i> Help others grow and expand
+            their knowledge.
+          </li>
+          <li>
+            <i class="fas fa-arrow-right-arrow-left"></i> Discover new skills
+            and broaden your own horizons.
+          </li>
+          <li>
+            <i class="fas fa-heart"></i> Contribute to a collaborative learning
+            environment.
+          </li>
+        </ul>
+        <img
+          src="../MEDIA/programmer.gif"
+          alt="Community Illustration"
+          class="info-image"
+        />
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Skills Trade. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
