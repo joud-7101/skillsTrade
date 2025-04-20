@@ -41,67 +41,129 @@ NOTES:
 -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="../CSS/HomePage.css">
-    <link rel="stylesheet" href="../CSS/ContactUs.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Skills Trade</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../CSS/HomePage.css" />
+    <link rel="stylesheet" href="../CSS/ContactUs.css" />
+  </head>
+  <body>
     <header>
-        <h1>Contact Us</h1>
-        <nav>
-            <a href="../HTML/HomePage.html" class="active">Home</a>
-            <a href="../HTML/Skills.html">Explore Skills</a>
-            <a href="../HTML/ShareSkill.html">Share Your Skill</a>
-            <a href="../HTML/Community.html">Community</a>
-            <a href="../HTML/AboutUs.html">About Us</a>
-            <a href="../HTML/ContactUs.html">Contact</a>
-            <a href="../HTML/Register.html">Register</a>
-            <a href="../HTML/Login.html" class="login-icon"><i class="fas fa-sign-in-alt"></i> Login</a>
-          </nav>       
+      <h1>Skills Trade</h1>
+      <nav>
+        <a href="../HTML/HomePage.html">Home</a>
+        <a href="../HTML/Skills.html">Explore Skills</a>
+        <a href="../HTML/ShareSkill.html">Share Your Skill</a>
+        <a href="../HTML/Community.html">Community</a>
+        <a href="../HTML/AboutUs.html">About Us</a>
+        <a href="../HTML/ContactUs.html" class="active">Contact</a>
+        <a href="../HTML/Register.html">Register</a>
+        <a href="../HTML/Login.html" class="login-icon">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+      </nav>
     </header>
 
-    <section class="contact-form">
-        <h2>Get in Touch</h2>
-        <form action="../backend/contact.php" method="POST">
-            <label for="name">First and Last Name:</label>
-            <input type="text" id="name" name="name" required>
+    <!-- Updated: Only one "Let's Connect!" section -->
+    <section class="contact-hero">
+      <div class="hero-content">
+        <h2>Let's Connect!</h2>
+        <p>
+          We're here to help. Reach out with any questions, feedback, or
+          collaboration ideas.
+        </p>
+      </div>
+      <div class="image-box">
+        <img src="../MEDIA/explains.gif" alt="Contact Us Image" />
+      </div>
+    </section>
 
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender" required>
-                <option value="" disabled selected>Select Gender</option> <!-- Placeholder option -->
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
+    <section class="contact-details">
+      <div class="detail-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Visit Us</h3>
+        <p>King Abdullah Rd, Al Andalus, Jeddah 23326, Saudi Arabia</p>
+      </div>
+      <div class="detail-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email Us</h3>
+        <p><a href="mailto:info@skillstrade.com">info@skillstrade.com</a></p>
+      </div>
+      <div class="detail-card">
+        <i class="fas fa-phone"></i>
+        <h3>Call Us</h3>
+        <p><a href="tel:+966123456789">+966 12 345 6789</a></p>
+      </div>
+    </section>
 
-            <label for="mobile">Mobile:</label>
-            <input type="tel" id="mobile" name="mobile" required>
+    <section class="contact-form-wrapper">
+      <h2>Send Us a Message</h2>
+      <form action="../backend/contact.php" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="name">
+            <i class="fas fa-user"></i> First and Last Name:</label
+          >
+          <input type="text" id="name" name="name" required />
+        </div>
 
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob" required>
+        <div class="form-group">
+          <label for="gender"><i class="fas fa-venus-mars"></i> Gender:</label>
+          <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
 
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
+        <div class="form-group">
+          <label for="mobile"><i class="fas fa-mobile-alt"></i> Mobile:</label>
+          <input type="tel" id="mobile" name="mobile" required />
+        </div>
 
-            <label for="language">Preferred Language:</label>
-            <select id="language" name="language" required>
-                <option value="" disabled selected>Select Language</option> <!-- Placeholder option -->
-                <option value="english">English</option>
-                <option value="arabic">Arabic</option>
-                <option value="french">French</option>
-            </select>
+        <div class="form-group">
+          <label for="dob">
+            <i class="fas fa-calendar-alt"></i> Date of Birth:</label
+          >
+          <input type="date" id="dob" name="dob" required />
+        </div>
 
-            <label for="message">Note?:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+        <div class="form-group">
+          <label for="email">
+            <i class="fas fa-envelope"></i> Email Address:</label
+          >
+          <input type="email" id="email" name="email" required />
+        </div>
 
-            <button type="submit">Submit</button>
-        </form>
+        <div class="form-group">
+          <label for="language">
+            <i class="fas fa-globe"></i> Preferred Language:</label
+          >
+          <select id="language" name="language" required>
+            <option value="" disabled selected>Select Language</option>
+            <option value="english">English</option>
+            <option value="arabic">Arabic</option>
+            <option value="french">French</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message"> <i class="fas fa-pencil-alt"></i> Note?:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+      </form>
     </section>
 
     <footer>
-        <p>&copy; 2025 Skills Trade. All rights reserved.</p>
+      <p>&copy; 2025 Skills Trade. All rights reserved.</p>
     </footer>
-</body>
+  </body>
 </html>
