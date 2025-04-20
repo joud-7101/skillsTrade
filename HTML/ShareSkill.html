@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Share Your Skill - Skills Trade</title>
+  <link rel="stylesheet" href="../CSS/HomePage.css" />
+  <link rel="stylesheet" href="../CSS/ShareSkills.css" />
+</head>
+<body>
+  <header>
+    <h1>Skills Trade</h1>
+    <nav>
+      <a href="../HTML/HomePage.html" class="active">Home</a>
+      <a href="../HTML/Skills.html">Explore Skills</a>
+      <a href="../HTML/ShareSkill.html">Share Your Skill</a>
+      <a href="../HTML/Community.html">Community</a>
+      <a href="../HTML/AboutUs.html">About Us</a>
+      <a href="../HTML/ContactUs.html">Contact</a>
+      <a href="../HTML/Register.html">Register</a>
+      <a href="../HTML/Login.html" class="login-icon"><i class="fas fa-sign-in-alt"></i> Login</a>
+    </nav>
+  </header>
+
+  <div class="upload-section">
+    <h2>Share Your Skill</h2>
+    <form action="../backend/upload.php" method="POST" enctype="multipart/form-data">
+      <input type="text" name="skillTitle" placeholder="Skill Name You Offer (e.g. Mobile Design)" required />
+      
+      <textarea name="description" rows="5" placeholder="Describe the skill you're offering..." required></textarea>
+      
+      <input type="text" name="wantSkill" placeholder="What skill would you like to receive in return?" required />
+
+      <label for="videoFile">Upload an Intro or Demo (Optional):</label>
+      <input type="file" id="videoFile" name="videoFile" accept="video/*" />
+
+      <button type="submit">Submit Your Skill</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Skills Trade. All rights reserved.</p>
+  </footer>
+</body>
+</html>

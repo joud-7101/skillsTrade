@@ -1,0 +1,53 @@
+.community-header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f2f6ff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .community-header h2 {
+    font-size: 28px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .community-header p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .community-list {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+  }
+  
+  .trade-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    width: 260px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    text-align: center;
+  }
+  
+  .trade-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .trade-card h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .trade-card p {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+  
