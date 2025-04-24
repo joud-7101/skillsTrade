@@ -3,36 +3,97 @@ body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(
-    to bottom,
-    #e0f7fa,
-    #cce5ff
-  ); /* Soft blue background gradient */
+  background: linear-gradient(to bottom, #e0f7fa, #cce5ff);
   color: #333;
+}
+/* Header */
+header {
+  background-color: #fff;
+  color: var(--text-dark);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #00aaff;
+  margin-right: 1rem;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--text-soft);
+  font-weight: bold;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+header nav a:hover {
+  color: #00aaff;
+}
+
+header nav a.active {
+  color: #00aaff;
+}
+
+header nav a.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #00aaff;
+  margin-top: 0.2rem;
+}
+
+header nav a.login-icon {
+  font-size: 1.1rem;
+  color: #00aaff;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+header nav a.login-icon i {
+  margin-right: 0.3rem;
+  font-size: 1.2rem;
+}
+
+header nav a.login-icon:hover {
+  color: #00aaff;
 }
 
 .contact-hero {
-  background: linear-gradient(
-    135deg,
-    #b9e6ff,
-    #64b5f6
-  ); /* Beautiful light to medium blue gradient */
+  background: linear-gradient(135deg, #b9e6ff, #64b5f6);
   color: white;
-  padding: 60px 20px; /* Thinner hero bar */
+  padding: 60px 20px;
   text-align: center;
-  margin-top: 60px; /* Adjust for header */
+  margin-top: 60px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: flex; /* Enable flexbox for layout */
-  justify-content: space-between; /* Space out text and image */
-  align-items: center; /* Vertically align text and image */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   overflow: hidden;
 }
 
 .contact-hero .hero-content {
-  max-width: 50%; /* Adjust width for text area */
-  padding-right: 20px; /* Space between text and image */
-  text-align: left; /* Align text to the left */
+  max-width: 50%;
+  padding-right: 20px;
+  text-align: left;
 }
 
 .contact-hero h2 {
@@ -40,7 +101,7 @@ body {
   margin-bottom: 15px;
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  padding-left: 30px; /* 👈 Add this line */
+  padding-left: 30px;
 }
 
 .contact-hero p {
@@ -162,14 +223,14 @@ body {
 }
 
 .contact-form textarea {
-  grid-column: 1 / -1; /* Make textarea span both columns */
+  grid-column: 1 / -1;
   min-height: 150px;
 }
 
 .contact-form button.submit-btn {
   grid-column: 1 / -1;
   padding: 15px;
-  background-color: #2ecc71; /* Beautiful green submit button */
+  background-color: #2ecc71;
   color: white;
   border: none;
   border-radius: 8px;
@@ -192,12 +253,26 @@ body {
 
 /* Responsive Design */
 @media (max-width: 992px) {
+  header h1 {
+    font-size: 1.6rem;
+    margin-right: 0.8rem;
+  }
+
+  header nav a {
+    margin-left: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 1rem;
+  }
+
   .contact-form {
-    grid-template-columns: 1fr; /* Stack form fields */
+    grid-template-columns: 1fr;
   }
 
   .contact-form textarea {
-    grid-column: auto; /* Reset textarea span */
+    grid-column: auto;
   }
 
   .contact-details {
@@ -205,7 +280,7 @@ body {
   }
 
   .contact-hero {
-    flex-direction: column; /* Stack text and image on smaller screens */
+    flex-direction: column;
     text-align: center;
     padding: 80px 20px;
   }
@@ -214,16 +289,28 @@ body {
     max-width: 100%;
     padding-right: 0;
     margin-bottom: 20px;
-    text-align: center;
   }
 
   .contact-hero .image-box {
-    width: 70%; /* Make image box wider on smaller screens */
+    width: 70%;
     margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
+  header h1 {
+    font-size: 1.4rem;
+    margin-right: 0.6rem;
+  }
+
+  header nav a {
+    font-size: 0.9rem;
+    margin-left: 0.6rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 0.9rem;
+  }
   .contact-hero h2 {
     font-size: 2.5rem;
   }
@@ -234,6 +321,24 @@ body {
 }
 
 @media (max-width: 576px) {
+  header {
+    padding: 0.8rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+  }
+
+  header nav a {
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 0.8rem;
+  }
+
   .contact-hero .image-box {
     width: 90%;
   }
