@@ -1,62 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manage Requests - Skills Trade</title>
     <link rel="stylesheet" href="../CSS/HomePage.css" />
     <link rel="stylesheet" href="../CSS/Skills.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="../CSS/ManageRequests.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+</head>
+<body>
     <header>
-      <h1>Skills Trade - Manage Requests</h1>
-      <nav>
-        <a href="../HTML/HomePage.html">Home</a>
-        <a href="../HTML/Skills.html">Explore Skills</a>
-        <a href="../HTML/Community.html">Community</a>
-        <a href="../backend/logout.php" class="logout-icon"><i class="fas fa-sign-out-alt"></i> Logout</a>
-      </nav>
+        <h1>Skills Trade</h1>
+        <nav>
+            <a href="../HTML/HomePage.html">Home</a>
+            <a href="../HTML/Skills.html">Explore Skills</a>
+            <a href="../HTML/ShareSkill.html">Share Your Skill</a>
+            <a href="../HTML/Community.html">Community</a>
+            <a href="../HTML/ManageRequests.html" class="active">Manage Requests</a>
+            <a href="../HTML/AboutUs.html">About Us</a>
+            <a href="../HTML/ContactUs.html">Contact</a>
+            <a href="../HTML/Register.html">Register</a>
+            <a href="../HTML/Login.html" class="login-icon"
+               ><i class="fas fa-sign-in-alt"></i> Login</a
+            >
+            <a href="../backend/logout.php" class="logout-icon"
+               ><i class="fas fa-sign-out-alt"></i> Logout</a
+            >
+        </nav>
     </header>
 
-    <section class="requests-grid"></section>
+    <div class="requests-container">
+        <div class="requests-header">
+            <img src="../MEDIA/looking.gif" alt="Manage Requests Icon" class="header-icon" />
+            <div class="header-text">
+                <h2>Manage Your Trade Requests</h2>
+                <p>Review incoming requests and decide on your next skill exchange.</p>
+            </div>
+        </div>
 
-    <div id="message" class="message-box"></div>
+
+        <div class="requests-visual">
+            <h3>Unlock New Skills</h3>
+            <p>Explore the opportunities for mutual learning and growth within our community.</p>
+        </div>
+
+        <div class="requests-list">
+            </div>
+    </div>
+    <div class="portal-container">
+        <section class="hero-panel">
+            <h1>✨ Welcome to Your Trade Portal</h1>
+            <p>Every request is a doorway to growth. Step in, explore, and shape your journey.</p>
+        </section>
+
+        <section class="requests-grid" id="requestsGrid">
+            </section>
+
+        <div id="noRequests" class="no-requests hidden">
+            <img src="../MEDIA/delivers.gif" alt="No Requests">
+            <h2>No new exchanges yet.</h2>
+            <p>Once someone reaches out, you'll find their trade offers here.</p>
+        </div>
+    </div>
+
+    <div id="message" class="message-box <?php echo isset($_GET['type']) ? htmlspecialchars($_GET['type']) : ''; ?>">
+        <?php
+        if (isset($_GET['message'])) {
+            echo htmlspecialchars($_GET['message']);
+            echo '<script>setTimeout(function(){ document.getElementById("message").classList.add("show"); setTimeout(function(){ document.getElementById("message").classList.remove("show"); }, 3000); }, 100);</script>';
+        }
+        ?>
+    </div>
 
     <footer>
-      <p>&copy; 2025 Skills Trade. All rights reserved.</p>
+        <p>&copy; 2025 Skills Trade. All rights reserved.</p>
     </footer>
 
     <script>
-        fetch('../backend/getRequests.php')
-          .then(response => response.json())
-          .then(data => {
-            console.log("Fetched data:", data);  // Debugging line!
-            const container = document.querySelector('.requests-grid');
-            if (data.length === 0) {
-              container.innerHTML = "<p>No requests received.</p>";
-            } else {
-              data.forEach(request => {
-                const card = document.createElement('div');
-                card.className = 'skill-card';
-                card.innerHTML = `
-  <h3>Trade Request</h3>
-  <p><strong>Requester:</strong> ${request.requester_name}</p>
-  <p><strong>Offering:</strong> ${request.skill_wanted}</p>
-  <p><strong>Requested:</strong> ${request.skill_offered}</p>
-  <form action="../backend/handleRequest.php" method="POST">
-    <input type="hidden" name="request_id" value="${request.id}">
-    <button name="action" value="accept">Accept</button>
-    <button name="action" value="reject">Reject</button>
-  </form>
-  <a href="../HTML/ViewVideos.html?receiver_id=${request.requester_id}" class="view-videos-btn">View Requester's Videos</a>
-`;
+        const requestsList = document.querySelector(".requests-list");
+        const requestsGrid = document.getElementById("requestsGrid");
+        const noRequestsDiv = document.getElementById("noRequests");
 
-                container.appendChild(card);
-              });
-            }
-          })
-          .catch(err => console.error("❌ Fetch error:", err));
-      </script>
-      
-  </body>
+        fetch("../backend/getRequests.php")
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("Fetched data:", data);
+                requestsList.innerHTML = ''; // Clear any previous content
+                requestsGrid.innerHTML = ''; // Clear any previous content
+                if (data.length === 0) {
+                    requestsGrid.classList.add('hidden');
+                    noRequestsDiv.classList.remove('hidden');
+                } else {
+                    noRequestsDiv.classList.add('hidden');
+                    requestsGrid.classList.remove('hidden');
+                    data.forEach((request, index) => {
+                        const card = document.createElement("div");
+                        card.className = "skill-card";
+                        card.innerHTML = `
+                            <h4>Trade Request</h4>
+                            <p><strong>Requester:</strong> ${request.requester_name}</p>
+                            <p><strong>Offering:</strong> ${request.skill_wanted}</p>
+                            <p><strong>Requested:</strong> ${request.skill_offered}</p>
+                            <div class="actions">
+                                <form action="../backend/handleRequest.php" method="POST">
+                                    <input type="hidden" name="request_id" value="${request.id}">
+                                    <button name="action" value="accept">Accept</button>
+                                    <button name="action" value="reject">Reject</button>
+                                </form>
+                                <a href="../HTML/ViewVideos.html?receiver_id=${request.requester_id}" class="view-videos-btn"><i class="fas fa-play-circle"></i> View Videos</a>
+                            </div>
+                        `;
+                        requestsGrid.appendChild(card);
+                        setTimeout(() => {
+                            card.classList.add('loaded');
+                        }, 50 * index); // Stagger the animation slightly
+                    });
+                }
+            })
+            .catch((err) => console.error("❌ Fetch error:", err));
+    </script>
+</body>
 </html>
