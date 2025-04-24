@@ -9,32 +9,33 @@ body {
   color: #555; /* Softer text color */
   line-height: 1.6;
   margin: 0;
-  padding-top: 60px; /* Space for fixed header */
+  padding-top: 80px; /* Space for fixed header */
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 60px); /* Adjust min-height for header */
+  min-height: calc(100vh - 80px); /* Adjust min-height for header */
 }
 
+/* Header */
 header {
   background-color: #fff;
-  color: #333;
+  color: var(--text-dark);
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
-  justify-content: flex-start;
 }
 
 header h1 {
   font-size: 1.8rem;
-  color: #007bff;
-  margin-right: 2rem;
+  color: #00aaff;
+  margin-right: 1rem;
 }
 
 header nav {
@@ -43,11 +44,12 @@ header nav {
 }
 
 header nav a {
-  margin-left: 1.5rem;
+  margin-left: 1rem;
   text-decoration: none;
-  color: #555;
+  color: var(--text-soft);
   font-weight: bold;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 header nav a:hover {
@@ -69,9 +71,10 @@ header nav a.active::after {
 
 header nav a.login-icon {
   font-size: 1.1rem;
-  color: #007bff;
+  color: #00aaff;
   display: flex;
   align-items: center;
+  margin-left: 1rem;
 }
 
 header nav a.login-icon i {
@@ -199,6 +202,33 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 992px) {
+  header h1 {
+    font-size: 1.6rem;
+    margin-right: 0.8rem;
+  }
+
+  header nav a {
+    margin-left: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 1rem;
+  }
+  header h1 {
+    font-size: 1.6rem;
+    margin-right: 0.8rem;
+  }
+
+  header nav a {
+    margin-left: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 1rem;
+  }
+
   .register-container {
     flex-direction: column;
     width: 95%;
@@ -218,6 +248,19 @@ footer {
 }
 
 @media (max-width: 768px) {
+  header h1 {
+    font-size: 1.4rem;
+    margin-right: 0.6rem;
+  }
+
+  header nav a {
+    font-size: 0.9rem;
+    margin-left: 0.6rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 0.9rem;
+  }
   .register-container {
     margin-top: 60px;
   }
@@ -251,9 +294,27 @@ footer {
 }
 
 @media (max-width: 576px) {
+  header {
+    padding: 0.8rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+  }
+
+  header nav a {
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 0.8rem;
+  }
   .form-group input {
     width: calc(100% - 20px); /* Adjust for even smaller screens */
   }
+
   .register-container {
     padding: 20px;
     margin-top: 50px;
