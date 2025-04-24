@@ -5,8 +5,82 @@ body {
     #e0f7fa,
     #cce5ff
   ); /* Soft radial gradient background */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #555;
+  margin: 0;
+  padding-top: 80px; /* Space for fixed header */
 }
 
+/* Header */
+header {
+  background-color: #fff;
+  color: var(--text-dark);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #00aaff;
+  margin-right: 1rem;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--text-soft);
+  font-weight: bold;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+header nav a:hover {
+  color: #00aaff;
+}
+
+header nav a.active {
+  color: #00aaff;
+}
+
+header nav a.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #00aaff;
+  margin-top: 0.2rem;
+}
+
+header nav a.login-icon {
+  font-size: 1.1rem;
+  color: #00aaff;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+header nav a.login-icon i {
+  margin-right: 0.3rem;
+  font-size: 1.2rem;
+}
+
+header nav a.login-icon:hover {
+  color: #00aaff;
+}
+/* Skills Grid */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(
@@ -19,6 +93,7 @@ body {
   margin: 60px auto 40px;
 }
 
+/* Skill Cards */
 .skill-card {
   background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
   border-radius: 15px;
@@ -68,6 +143,7 @@ body {
   font-weight: bold;
 }
 
+/* Trade Button */
 .trade-btn {
   display: inline-block;
   padding: 12px 25px;
@@ -85,9 +161,69 @@ body {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+
+/* Small Screens (Phone Portrait, 576px) */
+@media (max-width: 576px) {
+  header {
+    padding: 0.8rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+  }
+
+  header nav a {
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 0.8rem;
+  }
+
   .skills-grid {
-    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .skill-card {
+    flex-direction: column; /* Stack icon and text on smaller screens */
+    align-items: center; /* Align items to the center */
+    padding: 15px;
+  }
+  .skill-card .skill-icon {
+    font-size: 2.5rem;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .skill-card h3 {
+    font-size: 1.4rem;
+  }
+  .skill-card p {
+    font-size: 1rem;
+  }
+  .trade-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Medium Screens (Phone Landscape, 768px) */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.4rem;
+    margin-right: 0.6rem;
+  }
+
+  header nav a {
+    font-size: 0.9rem;
+    margin-left: 0.6rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 0.9rem;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr; /* Stack skill cards in one column */
     padding: 30px;
   }
   .skill-card {
@@ -108,5 +244,44 @@ body {
   }
   .trade-btn {
     font-size: 1rem;
+  }
+}
+
+/* Large Screens (Tablet, 992px) */
+@media (max-width: 992px) {
+  header h1 {
+    font-size: 1.6rem;
+    margin-right: 0.8rem;
+  }
+
+  header nav a {
+    margin-left: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    padding: 40px;
+  }
+  .skill-card {
+    flex-direction: row; /* Align icon and text side by side */
+    padding: 25px;
+  }
+  .skill-card .skill-icon {
+    font-size: 2.8rem;
+    margin-right: 15px;
+  }
+  .skill-card h3 {
+    font-size: 1.5rem;
+  }
+  .skill-card p {
+    font-size: 1.1rem;
+  }
+  .trade-btn {
+    font-size: 1.1rem;
   }
 }
