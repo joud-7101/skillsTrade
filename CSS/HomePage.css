@@ -1,4 +1,10 @@
 /* Home Page Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
@@ -27,32 +33,40 @@ header {
   left: 0;
   width: 100%;
   z-index: 100;
+  flex-wrap: wrap; /* Allow wrapping */
 }
 
 header h1 {
   font-size: 1.8rem;
   color: #00aaff;
   margin-right: 1rem;
+  flex-shrink: 0;
 }
 
 header nav {
   display: flex;
   align-items: center;
+  flex-wrap: wrap; /* Enable wrapping on small screens */
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none; /* Firefox */
+}
+
+header nav::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 header nav a {
   margin-left: 1rem;
   text-decoration: none;
-  color: var(--text-soft);
+  color: var(--text-soft, #444);
   font-weight: bold;
   transition: color 0.3s ease;
   white-space: nowrap;
+  padding: 0.3rem 0;
 }
 
-header nav a:hover {
-  color: #00aaff;
-}
-
+header nav a:hover,
 header nav a.active {
   color: #00aaff;
 }
@@ -66,21 +80,19 @@ header nav a.active::after {
   margin-top: 0.2rem;
 }
 
-header nav a.login-icon {
-  font-size: 1.1rem;
-  color: #00aaff;
+header nav a.login-icon,
+header nav a.logout-icon {
+  font-size: 1rem;
   display: flex;
   align-items: center;
+  color: #00aaff;
   margin-left: 1rem;
 }
 
-header nav a.login-icon i {
+header nav a.login-icon i,
+header nav a.logout-icon i {
   margin-right: 0.3rem;
   font-size: 1.2rem;
-}
-
-header nav a.login-icon:hover {
-  color: #00aaff;
 }
 
 /* Hero Section */
@@ -93,6 +105,7 @@ header nav a.login-icon:hover {
   border-radius: 0 0 20px 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   margin-top: 60px;
+  flex-wrap: wrap;
 }
 
 .hero-content {
@@ -221,79 +234,32 @@ footer p {
   color: #0088cc;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 /* Responsive Design Enhancements */
 
-/* Small devices (phones, less than 576px) */
+/* Phones (less than 576px) */
 @media (max-width: 575.98px) {
   header {
     padding: 0.8rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  header h1 {
-    font-size: 1.2rem;
-    margin-right: 0.4rem;
-  }
-
-  header nav a {
-    font-size: 0.8rem;
-    margin-left: 0.4rem;
-  }
-
-  header nav a.login-icon {
-    font-size: 0.8rem;
-  }
-  .hero h2 {
-    font-size: 2.2rem;
-  }
-
-  .hero .tagline {
-    font-size: 1rem;
-  }
-
-  .hero-illustration img {
-    max-width: 90%;
-  }
-
-  .step {
+  header nav {
     width: 100%;
+    flex-wrap: wrap;
+    overflow-x: auto;
   }
 
   header nav a {
-    margin-left: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .register-btn {
-    padding: 12px 25px;
-    font-size: 1rem;
-  }
-}
-
-/* Medium devices (tablets, 576px to 768px) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-  header {
-    padding: 0.8rem 1rem;
+    margin: 0.3rem 0.6rem;
+    font-size: 0.85rem;
   }
 
   header h1 {
-    font-size: 1.2rem;
-    margin-right: 0.4rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
   }
 
-  header nav a {
-    font-size: 0.8rem;
-    margin-left: 0.4rem;
-  }
-
-  header nav a.login-icon {
-    font-size: 0.8rem;
-  }
   .hero {
     flex-direction: column-reverse;
     text-align: center;
@@ -305,29 +271,34 @@ footer p {
     margin-top: 2rem;
   }
 
-  .hero-illustration img {
-    max-width: 100%;
+  .hero h2 {
+    font-size: 2rem;
   }
 
-  .step {
-    width: 90%;
-    max-width: 400px;
-  }
-
-  header nav a {
-    margin-left: 1.2rem;
+  .hero .tagline {
+    font-size: 1rem;
   }
 
   .register-btn {
-    padding: 13px 28px;
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .hero-illustration img {
+    max-width: 90%;
+  }
+
+  .step {
+    width: 100%;
   }
 }
 
-/* Large tablets and small desktops (768px to 992px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  header h1 {
-    font-size: 1.4rem;
-    margin-right: 0.6rem;
+/* Tablets (576px to 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.8rem 1rem;
   }
 
   header nav a {
@@ -335,9 +306,33 @@ footer p {
     margin-left: 0.6rem;
   }
 
-  header nav a.login-icon {
-    font-size: 0.9rem;
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 40px 15px;
   }
+
+  .hero-content {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .register-btn {
+    padding: 13px 28px;
+  }
+
+  .step {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+/* Small desktops (768px to 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
   .hero {
     flex-direction: row;
     padding: 50px 25px;
@@ -364,33 +359,12 @@ footer p {
   .step {
     width: 280px;
   }
-
-  header nav a {
-    margin-left: 1.3rem;
-  }
 }
 
 /* Desktops (992px and up) */
 @media (min-width: 992px) {
-  header h1 {
-    font-size: 1.6rem;
-    margin-right: 0.8rem;
-  }
-
-  header nav a {
-    margin-left: 0.8rem;
-    font-size: 0.95rem;
-  }
-
-  header nav a.login-icon {
-    font-size: 1rem;
-  }
   .hero {
     padding: 60px 40px;
-  }
-
-  .hero-illustration img {
-    max-width: 120%;
   }
 
   .hero-content {
@@ -405,9 +379,23 @@ footer p {
     padding: 14px 30px;
   }
 
-  .steps {
-    gap: 30px;
+  .hero-illustration img {
+    max-width: 120%;
   }
+
+  .step {
+    width: 300px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  header nav a {
+    font-size: 0.95rem;
+  }
+}
+
 
   .step {
     width: 300px;
