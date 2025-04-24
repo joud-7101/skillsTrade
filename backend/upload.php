@@ -16,8 +16,9 @@ if (!empty($_FILES['videoFile']['name'])) {
 
 $stmt = $pdo->prepare("INSERT INTO skills (user_id, skillTitle, description, wantSkill, videoPath) VALUES (?, ?, ?, ?, ?)");
 if ($stmt->execute([$userId, $skillTitle, $description, $wantSkill, $videoPath])) {
-    echo "Skill shared successfully!";
-} else {
+    header("Location: ../HTML/Skills.html"); // 🔁 Redirect to Skills page (or HomePage.html)
+    exit();
+    } else {
     echo "Error sharing skill.";
 }
 ?>
