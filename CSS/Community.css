@@ -6,6 +6,78 @@ body {
     #bbdefb
   ); /* Soft blue background gradient */
 }
+
+/* Header */
+header {
+  background-color: #fff;
+  color: var(--text-dark);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #00aaff;
+  margin-right: 1rem;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--text-soft);
+  font-weight: bold;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+header nav a:hover {
+  color: #00aaff;
+}
+
+header nav a.active {
+  color: #00aaff;
+}
+
+header nav a.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #00aaff;
+  margin-top: 0.2rem;
+}
+
+header nav a.login-icon {
+  font-size: 1.1rem;
+  color: #00aaff;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+header nav a.login-icon i {
+  margin-right: 0.3rem;
+  font-size: 1.2rem;
+}
+
+header nav a.login-icon:hover {
+  color: #00aaff;
+}
+
+/* Hero Section */
 .community-hero {
   background: linear-gradient(45deg, #8ac4ff, #a7c0cd, #64b5f6, #b0e0e6);
   background-size: 200% 200%;
@@ -14,7 +86,6 @@ body {
   padding: 80px 20px;
   text-align: center;
   margin-top: 60px;
-  box-shadow: none;
   position: relative;
   overflow: hidden;
 }
@@ -49,169 +120,10 @@ body {
 }
 
 .community-hero .hero-image {
-  display: none;
+  display: none; /* Hide illustration */
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-  .community-hero {
-    padding: 70px 15px;
-  }
-  .community-hero h2 {
-    font-size: 2.5rem;
-  }
-  .community-hero p {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .community-hero {
-    padding: 60px 15px;
-  }
-  .community-hero h2 {
-    font-size: 2.2rem;
-  }
-  .community-hero p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .community-hero {
-    padding: 50px 15px;
-  }
-  .community-hero h2 {
-    font-size: 1.8rem;
-  }
-  .community-hero p {
-    font-size: 0.9rem;
-  }
-}
-.community-hero .hero-image {
-  display: none;
-}
-
-/* Keyframes for multi-color sliding animation (all blue) */
-@keyframes blueColorSlide {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .community-hero {
-    padding: 70px 15px;
-  }
-  .community-hero h2 {
-    font-size: 2.5rem;
-  }
-  .community-hero p {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .community-hero {
-    padding: 60px 15px;
-  }
-  .community-hero h2 {
-    font-size: 2.2rem;
-  }
-  .community-hero p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .community-hero {
-    padding: 50px 15px;
-  }
-  .community-hero h2 {
-    font-size: 1.8rem;
-  }
-  .community-hero p {
-    font-size: 0.9rem;
-  }
-}
-
-.community-hero .hero-image {
-  display: none; /* Hide illustration on larger screens */
-}
-
-/* Optional: More sophisticated animated gradient */
-.community-hero {
-  background: linear-gradient(45deg, #8ac4ff, #a7c0cd, #64b5f6, #b0e0e6);
-  background-size: 400% 400%;
-  animation: beautifulGradient 15s ease infinite;
-}
-
-@keyframes beautifulGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .community-hero {
-    padding: 70px 15px;
-  }
-  .community-hero h2 {
-    font-size: 2.5rem;
-  }
-  .community-hero p {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .community-hero {
-    padding: 60px 15px;
-  }
-  .community-hero h2 {
-    font-size: 2.2rem;
-  }
-  .community-hero p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .community-hero {
-    padding: 50px 15px;
-  }
-  .community-hero h2 {
-    font-size: 1.8rem;
-  }
-  .community-hero p {
-    font-size: 0.9rem;
-  }
-}
-
-.community-hero .hero-image {
-  display: none; /* Hide illustration on larger screens for background focus */
-}
-
-/* Subtle Animated Background (Hero) - Keeping this */
-.community-hero {
-  background-size: 200% 200%;
-  animation: gradientAnimation 10s ease infinite;
-}
-
+/* Gradient Animation */
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -224,21 +136,10 @@ body {
   }
 }
 
-/* Responsive Design - Adjusting for smaller height */
+/* Responsive Design */
 @media (max-width: 992px) {
   .community-hero {
-    padding: 80px 15px; /* Already at 80px */
-  }
-
-  .community-hero h2 {
-    font-size: 3rem;
-    margin-bottom: 10px; /* Slightly reduced bottom margin */
-  }
-}
-
-@media (max-width: 768px) {
-  .community-hero {
-    padding: 60px 15px; /* Further reduced padding */
+    padding: 70px 15px;
   }
 
   .community-hero h2 {
@@ -246,106 +147,39 @@ body {
   }
 
   .community-hero p {
-    font-size: 1.2rem;
-    line-height: 1.5; /* Slightly reduced line height */
-  }
-}
-
-@media (max-width: 576px) {
-  .community-hero {
-    padding: 50px 15px; /* Even further reduced padding */
-  }
-
-  .community-hero h2 {
-    font-size: 2rem;
-  }
-
-  .community-hero p {
     font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .community-hero {
-    padding: 50px 15px; /* Even further reduced padding */
-  }
-
-  .community-hero h2 {
-    font-size: 2rem;
-  }
-
-  .community-hero p {
-    font-size: 1.1rem;
-  }
-}
-
-.community-hero .hero-image {
-  display: none; /* Hide illustration on larger screens for background focus */
-}
-
-/* Subtle Animated Background (Hero) - Keeping this */
-.community-hero {
-  background-size: 200% 200%;
-  animation: gradientAnimation 10s ease infinite;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Responsive Design - Adjusting for smaller height */
-@media (max-width: 992px) {
-  .community-hero {
-    padding: 80px 15px; /* Already at 80px */
-  }
-
-  .community-hero h2 {
-    font-size: 3rem;
-    margin-bottom: 10px; /* Slightly reduced bottom margin */
   }
 }
 
 @media (max-width: 768px) {
   .community-hero {
-    padding: 60px 15px; /* Further reduced padding */
+    padding: 60px 15px;
   }
 
   .community-hero h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .community-hero p {
-    font-size: 1.2rem;
-    line-height: 1.5; /* Slightly reduced line height */
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 576px) {
   .community-hero {
-    padding: 50px 15px; /* Even further reduced padding */
+    padding: 50px 15px;
   }
 
   .community-hero h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .community-hero p {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 }
 
-.community-hero .hero-image {
-  display: none; /* Hide illustration on larger screens for background focus */
-}
-
+/* Community Grid */
 .community-grid {
   max-width: 1100px;
   margin: 50px auto;
@@ -355,6 +189,7 @@ body {
   padding: 30px;
 }
 
+/* Trade Cards */
 .trade-card {
   background-color: #fff;
   border-radius: 15px;
@@ -372,6 +207,7 @@ body {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* User Info in Trade Card */
 .user-info {
   display: flex;
   align-items: center;
@@ -394,6 +230,7 @@ body {
   margin: 0;
 }
 
+/* Badge */
 .badge {
   background-color: #4caf50; /* Green for 'Offering' */
   color: white;
@@ -403,6 +240,7 @@ body {
   margin-left: 10px;
 }
 
+/* Skills and Wants */
 .skill {
   color: #007bff;
   font-size: 1.1rem;
@@ -420,6 +258,7 @@ body {
   margin-bottom: 20px;
 }
 
+/* Connect Button */
 .connect-btn {
   background-color: #007bff;
   color: white;
@@ -440,38 +279,25 @@ body {
   margin-right: 8px;
 }
 
-/* Subtle Animated Background (Hero) */
-.community-hero {
-  background-size: 200% 200%;
-  animation: gradientAnimation 10s ease infinite;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Responsive Design */
+/* Responsive Design for Community Grid and Cards */
 @media (max-width: 992px) {
+  header h1 {
+    font-size: 1.6rem;
+    margin-right: 0.8rem;
+  }
+
+  header nav a {
+    margin-left: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 1rem;
+  }
   .community-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     padding: 20px;
-  }
-
-  .community-hero {
-    padding: 100px 15px;
-  }
-
-  .community-hero h2 {
-    font-size: 3rem;
   }
 
   .trade-card {
@@ -496,12 +322,21 @@ body {
 }
 
 @media (max-width: 768px) {
-  .community-grid {
-    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  header h1 {
+    font-size: 1.4rem;
+    margin-right: 0.6rem;
   }
 
-  .community-hero h2 {
-    font-size: 2.5rem;
+  header nav a {
+    font-size: 0.9rem;
+    margin-left: 0.6rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 0.9rem;
+  }
+  .community-grid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
   }
 
   .trade-card {
@@ -527,6 +362,23 @@ body {
 }
 
 @media (max-width: 576px) {
+  header {
+    padding: 0.8rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+  }
+
+  header nav a {
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 0.8rem;
+  }
   .community-hero h2 {
     font-size: 2rem;
   }
