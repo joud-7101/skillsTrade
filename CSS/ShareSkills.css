@@ -1,11 +1,83 @@
-/* Share Your Skill Page Styles - Creative Redesign */
+/* Share Your Skill Page Styles */
 body {
-  background: linear-gradient(
-    135deg,
-    #f0f8ff,
-    #e0f2f7
-  ); /* Soft, inviting background gradient */
+  background: linear-gradient(135deg, #f0f8ff, #e0f2f7);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #555; /* Softer text color */
+  margin: 0;
+  padding-top: 80px; /* Space for fixed header */
 }
+
+/* Header */
+header {
+  background-color: #fff;
+  color: var(--text-dark);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #00aaff;
+  margin-right: 1rem;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--text-soft);
+  font-weight: bold;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+header nav a:hover {
+  color: #00aaff;
+}
+
+header nav a.active {
+  color: #00aaff;
+}
+
+header nav a.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #00aaff;
+  margin-top: 0.2rem;
+}
+
+header nav a.login-icon {
+  font-size: 1.1rem;
+  color: #00aaff;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+header nav a.login-icon i {
+  margin-right: 0.3rem;
+  font-size: 1.2rem;
+}
+
+header nav a.login-icon:hover {
+  color: #00aaff;
+}
+
+/* Hero Section */
 .share-skill-hero {
   background: linear-gradient(
     135deg,
@@ -13,12 +85,12 @@ body {
     #64b5f6
   ); /* Beautiful light to medium blue gradient */
   color: white;
-  padding: 80px 20px; /* Adjusted padding for smaller height */
+  padding: 80px 20px;
   text-align: center;
   margin-top: 60px; /* Adjust for header */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
-  overflow: hidden; /* For potential future animated backgrounds */
+  overflow: hidden;
 }
 
 .share-skill-hero .hero-content {
@@ -43,6 +115,7 @@ body {
   display: none; /* Hide hero image on larger screens */
 }
 
+/* Share Skill Container */
 .share-skill-container {
   max-width: 1200px;
   margin: 40px auto;
@@ -152,6 +225,7 @@ body {
   transform: scale(1.02);
 }
 
+/* Share Info Section */
 .share-info-section {
   padding: 30px;
   background-color: #f4faff;
@@ -197,6 +271,20 @@ body {
 
 /* Responsive Design */
 @media (max-width: 992px) {
+  header h1 {
+    font-size: 1.6rem;
+    margin-right: 0.8rem;
+  }
+
+  header nav a {
+    margin-left: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 1rem;
+  }
+
   .share-skill-container {
     grid-template-columns: 1fr; /* Stack form and info on smaller screens */
   }
@@ -207,6 +295,19 @@ body {
 }
 
 @media (max-width: 768px) {
+  header h1 {
+    font-size: 1.4rem;
+    margin-right: 0.6rem;
+  }
+
+  header nav a {
+    font-size: 0.9rem;
+    margin-left: 0.6rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 0.9rem;
+  }
   .share-skill-hero {
     padding: 80px 15px;
   }
@@ -235,5 +336,45 @@ body {
 
   .share-info-section li {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 0.8rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+  }
+
+  header nav a {
+    font-size: 0.8rem;
+    margin-left: 0.4rem;
+  }
+
+  header nav a.login-icon {
+    font-size: 0.8rem;
+  }
+  .share-skill-hero h2 {
+    font-size: 2rem;
+  }
+
+  .share-skill-form input[type="text"],
+  .share-skill-form textarea {
+    padding: 12px;
+  }
+
+  .share-info-section h3 {
+    font-size: 1.6rem;
+  }
+
+  .share-info-section li {
+    font-size: 0.9rem;
+  }
+
+  .share-skill-container {
+    padding: 20px;
   }
 }
