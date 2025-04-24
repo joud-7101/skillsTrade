@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Videos - Skills Trade</title>
+  <link rel="stylesheet" href="../CSS/HomePage.css" />
+  <link rel="stylesheet" href="../CSS/Skills.css" />
+</head>
+<body>
+  <header>
+    <h1>Receiver's Shared Videos</h1>
+  </header>
+
+  <section class="videos-grid"></section>
+
+  <footer>
+    <p>&copy; 2025 Skills Trade. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const receiverId = params.get('receiver_id');
+
+    fetch(`../backend/getVideos.php?receiver_id=${receiverId}`)
+      .then(response => response.json())
+      .then(data => {
+        const container = document.querySelector('.videos-grid');
+        if (data.length === 0) {
+          container.innerHTML = "<p>No videos shared by this user.</p>";
+        } else {
+          data.forEach(video => {
+            const card = document.createElement('div');
+            card.className = 'video-card';
+            card.innerHTML = `
+              <h3>${video.title}</h3>
+              <p>${video.description}</p>
+              <video width="320" height="240" controls>
+                <source src="../${video.videoPath}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            `;
+            container.appendChild(card);
+          });
+        }
+      })
+      .catch(err => console.error("❌ Fetch error:", err));
+  </script>
+</body>
+</html>

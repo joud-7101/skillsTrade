@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Requests - Skills Trade</title>
+    <link rel="stylesheet" href="../CSS/HomePage.css" />
+    <link rel="stylesheet" href="../CSS/Skills.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Skills Trade - Manage Requests</h1>
+      <nav>
+        <a href="../HTML/HomePage.html">Home</a>
+        <a href="../HTML/Skills.html">Explore Skills</a>
+        <a href="../HTML/Community.html">Community</a>
+        <a href="../backend/logout.php" class="logout-icon"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </nav>
+    </header>
+
+    <section class="requests-grid"></section>
+
+    <div id="message" class="message-box"></div>
+
+    <footer>
+      <p>&copy; 2025 Skills Trade. All rights reserved.</p>
+    </footer>
+
+    <script>
+        fetch('../backend/getRequests.php')
+          .then(response => response.json())
+          .then(data => {
+            console.log("Fetched data:", data);  // Debugging line!
+            const container = document.querySelector('.requests-grid');
+            if (data.length === 0) {
+              container.innerHTML = "<p>No requests received.</p>";
+            } else {
+              data.forEach(request => {
+                const card = document.createElement('div');
+                card.className = 'skill-card';
+                card.innerHTML = `
+  <h3>Trade Request</h3>
+  <p><strong>Requester:</strong> ${request.requester_name}</p>
+  <p><strong>Offering:</strong> ${request.skill_wanted}</p>
+  <p><strong>Requested:</strong> ${request.skill_offered}</p>
+  <form action="../backend/handleRequest.php" method="POST">
+    <input type="hidden" name="request_id" value="${request.id}">
+    <button name="action" value="accept">Accept</button>
+    <button name="action" value="reject">Reject</button>
+  </form>
+  <a href="../HTML/ViewVideos.html?receiver_id=${request.requester_id}" class="view-videos-btn">View Requester's Videos</a>
+`;
+
+                container.appendChild(card);
+              });
+            }
+          })
+          .catch(err => console.error("❌ Fetch error:", err));
+      </script>
+      
+  </body>
+</html>

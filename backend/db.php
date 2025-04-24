@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $db   = 'skills_trade';
-$user = 'root';  
-$pass = '';      
+$user = 'root';
+$pass = '';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

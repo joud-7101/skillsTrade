@@ -18,7 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3>${skill.skillTitle}</h3>
             <p><strong>Offered by:</strong> ${skill.userName}</p>
             <p><strong>Wants:</strong> ${skill.wantSkill}</p>
-            <a href="#" class="trade-btn">Request Trade</a>
+            <form action="../backend/send_request.php" method="POST">
+              <input type="hidden" name="receiver_id" value="${skill.userId}">
+              <input type="hidden" name="skill_offered" value="${skill.skillTitle}">
+              <input type="hidden" name="skill_wanted" value="${skill.wantSkill}">
+              <button type="submit" class="trade-btn">Request Trade</button>
+            </form>
           </div>
         `;
         container.appendChild(card);
@@ -28,3 +33,4 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("❌ Failed to load skills:", err);
     });
 });
+

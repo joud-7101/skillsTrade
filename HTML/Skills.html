@@ -10,9 +10,6 @@
     />
     <link rel="stylesheet" href="../CSS/HomePage.css" />
     <link rel="stylesheet" href="../CSS/Skills.css" />
-   
-
-
   </head>
   <body>
     <header>
@@ -25,23 +22,38 @@
         <a href="../HTML/AboutUs.html">About Us</a>
         <a href="../HTML/ContactUs.html">Contact</a>
         <a href="../HTML/Register.html">Register</a>
-        <a href="../HTML/Login.html" class="login-icon"
-          ><i class="fas fa-sign-in-alt"></i> Login</a
-        >
+        <a href="../HTML/Login.html" class="login-icon">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </a>
         <a href="../backend/logout.php" class="logout-icon">
           <i class="fas fa-sign-out-alt"></i> Logout
         </a>
       </nav>
     </header>
 
+    <!-- Skills Grid -->
     <section class="skills-grid">
-   
+      <!-- Skills will be dynamically loaded here -->
     </section>
+
+    <!-- Message Box -->
+    <div id="message" class="message-box"></div>
 
     <footer>
       <p>&copy; 2025 Skills Trade. All rights reserved.</p>
     </footer>
-  </body>
-  <script src="../JS/fetchSkills.js"></script>
 
+    <!-- Scripts -->
+    <script src="../JS/fetchSkills.js"></script>
+    <script>
+      // Display request status message
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('message')) {
+        const messageBox = document.getElementById('message');
+        messageBox.innerText = params.get('message');
+        messageBox.style.color = 'green'; // Optional styling
+      }
+    </script>
+  </body>
 </html>
+
