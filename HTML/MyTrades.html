@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Trades</title>
+    <link rel="stylesheet" href="../CSS/Community.css" />
+    <link rel="stylesheet" href="../CSS/HomePage.css" />
+
+    <!-- Reuse community styling -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <script src="../JS/nav.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Skills Trade</h1>
+      <!-- 
+        navbar will be loaded here from navbar.php
+        and is being loaded by nav.js
+      -->      
+
+    </header>
+
+    <main>
+      <h1>My Trades</h1>
+      <div class="trades-grid"></div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Skills Trade. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Service</a>
+        <p>
+          <a href="AboutUs.html">About Us</a> |
+          <a href="ContactUs.html">Contact Us</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch("../backend/getUserTrades.php")
+          .then((res) => res.json())
+          .then((data) => {
+            const container = document.querySelector(".trades-grid");
+            container.innerHTML = "";
+            
+            if (data.length === 0 || data.error) {
+              container.innerHTML = "<h2>You have no trades yet.</h2>";
+              container.classList.add('none');
+              return;
+            } 
+
+            data.forEach((trade) => {
+              const card = document.createElement("div");
+              card.className = "trade-card";
+              card.innerHTML = `
+                <h3>${trade.skill_offered} 
+                  <span class="status ${trade.status}">${trade.status}</span>
+                </h3>
+                <p><strong>Wanted:</strong> ${trade.skill_wanted}</p>
+                <p><strong>Requester:</strong> 
+                  <i class="fas fa-user"></i> 
+                  ${trade.requesterName}
+                </p>
+                <p><strong>Receiver:</strong> 
+                  <i class="fas fa-user"></i> ${trade.receiverName}
+                </p>
+              ${
+                trade.videoID
+                  ? `<video style='width:320px;height:auto;' controls>
+                    <source src="../backend/streamVideo.php?id=${trade.videoID}" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>`
+                  : "<p class='video-tag'>No video available</p>"
+              }
+            `;
+
+              container.appendChild(card);
+            });
+          })
+          .catch((err) => console.error("Failed to fetch your trades:", err));
+      });
+    </script>
+  </body>
+</html>

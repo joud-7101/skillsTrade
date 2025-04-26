@@ -6,6 +6,7 @@
   <title>View Videos - Skills Trade</title>
   <link rel="stylesheet" href="../CSS/HomePage.css" />
   <link rel="stylesheet" href="../CSS/Skills.css" />
+  <link rel="stylesheet" href="../CSS/Video.css">
 </head>
 <body>
   <header>
@@ -35,8 +36,8 @@
             card.innerHTML = `
               <h3>${video.title}</h3>
               <p>${video.description}</p>
-              <video width="320" height="240" controls>
-                <source src="../${video.videoPath}" type="video/mp4">
+              <video controls>
+                <source src="../backend/streamVideo.php?id=${video.id}" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             `;

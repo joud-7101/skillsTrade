@@ -107,12 +107,24 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* More noticeable shadow */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smoother transition */
   border-left: 8px solid #00aaff; /* Thicker accent border */
+
+  display: flex;
+  gap: 1em;
 }
 
 .skill-card:hover {
   transform: translateY(-8px); /* More pronounced lift */
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
 }
+
+.skill-card .vert{
+  display: flex;
+  flex-direction: column;
+}
+.skill-card .vert p{
+  margin: 0;
+}
+
 
 .skill-card h4 {
   font-size: 1.6rem; /* Slightly larger heading */
@@ -135,6 +147,7 @@ body {
 /* Buttons & Links */
 .skill-card .actions {
   display: flex;
+  flex-direction: column;
   gap: 18px; /* Increased gap */
   flex-wrap: wrap;
   margin-top: 25px; /* Increased margin */
@@ -224,11 +237,15 @@ body {
 }
 
 #requestsGrid {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(
     auto-fit,
     minmax(380px, 1fr)
-  ); /* Slightly wider grid cards */
+  ); 
+  gap: 40px; */
+  /* Slightly wider grid cards */
+  display: flex;
+  flex-wrap: wrap;
   gap: 40px;
 }
 
@@ -403,11 +420,6 @@ footer p {
 
   .skill-card h4 {
     font-size: 1.4rem;
-  }
-
-  .skill-card .actions {
-    flex-direction: column; /* Stack buttons on smaller screens */
-    align-items: stretch;
   }
 
   .skill-card button,

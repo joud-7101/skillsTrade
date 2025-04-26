@@ -387,3 +387,100 @@ header nav a.login-icon:hover {
     font-size: 1.4rem;
   }
 }
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+.status.pending { background-color: orange; color: white; }
+.status.accepted { background-color: green; color: white; }
+.status.rejected { background-color: red; color: white; }
+
+main{
+  margin-top: 10rem;
+}
+main h1{
+  text-align: center;
+}
+
+body{
+  background: #000;
+}
+.trades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  /* background: rgb(250, 250, 250); dark background */
+}
+.trades-grid.none{
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #777;
+  font-size: 2rem;
+  border-radius: 10px;
+  margin:1em 3em 3em 3em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.trade-card {
+  color: #333;
+  flex: 1 1 400px;
+
+  background: rgb(240, 240, 240); /* card background */
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.trade-card:hover {
+  transform: translateY(-5px);
+}
+
+.trade-card h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.trade-card video{
+  margin-top: 1em;
+}
+.trade-card .video-tag{
+  margin-top: 5rem;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 12px;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}
+
+.status.pending {
+  background: orange;
+  color: #000;
+}
+
+.status.accepted {
+  background: green;
+  color: #fff;
+}
+
+.status.rejected {
+  background: red;
+  color: #fff;
+}
+
+p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
